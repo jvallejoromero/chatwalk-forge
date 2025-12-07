@@ -1,6 +1,7 @@
 package com.jvallejoromero.chatwalkforge.client.event;
 
 import com.jvallejoromero.chatwalkforge.ChatWalkForge;
+import com.jvallejoromero.chatwalkforge.Config;
 import com.jvallejoromero.chatwalkforge.state.WalkState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.ChatScreen;
@@ -25,6 +26,8 @@ public class MovementEvents {
 
     @SubscribeEvent
     public static void onMovementInput(MovementInputUpdateEvent event) {
+        if (!Config.enableChatWalk) return;
+
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null) return;
 
@@ -39,7 +42,7 @@ public class MovementEvents {
             }
 
             boolean shouldAutoJump = mc.player.horizontalCollision && isJumpableBlock(mc.player) && !mc.options.autoJump().get();
-            if (shouldAutoJump) {
+            if (shouldAutoJump && Config.enableChatWalkAutoJump) {
                 event.getInput().jumping = true;
             }
         } else {
