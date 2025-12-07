@@ -2,9 +2,11 @@ package com.jvallejoromero.chatwalkforge.client;
 
 import com.jvallejoromero.chatwalkforge.Config;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import org.jetbrains.annotations.NotNull;
 
 public class ChatWalkConfigScreen extends Screen {
 
@@ -49,6 +51,13 @@ public class ChatWalkConfigScreen extends Screen {
                         .bounds(centerX - 100, y + 48, 200, 20)
                         .build()
         );
+    }
+
+    @Override
+    public void render(@NotNull GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
+        this.renderBackground(guiGraphics);
+        super.render(guiGraphics, mouseX, mouseY, partialTick);
+        guiGraphics.drawCenteredString(this.font, this.title, this.width / 2, this.height / 6, 0xFFFFFF);
     }
 
     @Override
