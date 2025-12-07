@@ -8,6 +8,8 @@ This port not only brings the original functionality to Forge but also adds a ne
 
 - **Walk While Chatting**: If you open the chat screen while holding your forward key, you will continue to walk forward automatically.
 - **Float While Chatting**: As an added feature, if you are in water (but not swimming underwater) when you activate ChatWalk, you will also automatically jump. This keeps you afloat at the water's surface while you type.
+- **Auto Jump While Chatting**: If Minecraft’s built-in auto-jump is disabled and you are walking while chatting you will also automatically jump over jumpable blocks.
+- You can disable auto jump for this mod and ChatWalk altogether by going inside your modlist and clicking the config button.
 
 ## How to Use
 
