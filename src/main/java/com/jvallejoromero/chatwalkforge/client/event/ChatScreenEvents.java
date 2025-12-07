@@ -21,8 +21,6 @@ public class ChatScreenEvents {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null) return;
 
-        System.out.println("forward impulse: " + mc.player.zza);
-
         if (event.getNewScreen() instanceof ChatScreen && mc.options.keyUp.isDown()) {
             WalkState.setWalkingWhileChatting(true);
         }
