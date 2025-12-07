@@ -26,6 +26,10 @@ public class MovementEvents {
         boolean chatOpen = mc.screen instanceof ChatScreen;
         if (chatOpen) {
             event.getInput().forwardImpulse = 1.0F;
+
+            if (mc.player.isInWater() && !mc.player.isUnderWater()) {
+                event.getInput().jumping = true;
+            }
         } else {
             WalkState.setWalkingWhileChatting(false);
         }
